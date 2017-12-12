@@ -1,0 +1,38 @@
+<a href="#/events">Go Back</a>
+<div class="panel panel-default" ng-init="getEvent()">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{event.name}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="{{venue.icon}}">
+      </div>
+      <div class="col-md-8">
+        <p class="venue">{{event.desc}}</p>
+        <ul class="list-group">
+          <li class="list-group-item">Venue: {{event.venue.name}}</li>
+          <li class="list-group-item">Date: {{event.date}}</li>
+          <li class="list-group-item">Url: {{event.url}}</li>
+        </ul>
+      </div> 
+      <div class="col-md-4">
+        <img class="thumb_details" src="{{event.venue.icon}}">
+      </div>
+      <div class="col-md-8">
+        <p class="venue">The Venue</p>
+        <ul class="list-group">
+          <li class="list-group-item">Name: {{event.venue.name}}</li>
+          <li class="list-group-item">Postcode: {{event.venue.postcode}}</li>
+          <li class="list-group-item">Town: {{venue.town}}</li>
+          <li class="list-group-item">Url: {{event.venue.url}}</li>
+        </ul>
+
+      </div> 
+    </div>
+  </div>
+</div>
+
+<div class="pull-right">
+  <a href="#!/events/edit/{{event._id}}">Edit</a> |  <a href="#" ng-click="removeEvent(event._id)">Delete</a>
+</div>      

@@ -1,0 +1,63 @@
+.thumb_details{
+  position: relative; /* Declared position allows for location changes */
+  top: -100px;
+	width: 300px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 5px;
+	margin: auto;
+	display: block;
+}
+
+.thumbnail {
+	width: 120px;
+}
+.p {
+  overflow: hidden;
+  max-width: 75ch;
+}
+
+.paraff {
+   white-space: nowrap;
+   width: 8em;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.par {
+	max-width: 40px;
+	max-height: 40px;
+}
+
+.body{
+    background: navy;
+}
+
+body, html {
+    height: 100%;
+}
+.bg { 
+    /* The image used */
+    background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.venue {
+
+	font-weight: bold;
+	font-style: italic;
+
+}
+
+.post {
+
+  font-style: italic;
+
+}

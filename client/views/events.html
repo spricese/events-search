@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+  <div class="panel-heading" ng-init="getRemoteEvents()">
+    <h3 class="panel-title">Latest events</h3>
+  </div>
+  <div>
+  <input type="text" ng-model="search" placeholder="Search for events, venues, or dates" size="40">
+  <div class="panel-body">
+    <div class="row">
+    	<div ng-repeat="event in events | filter:search">
+    		<div class="col-md-3">
+    			<div class="col-md-6">
+    				<h4>{{event.title}}</h4>
+            <div class="para">
+            <p class="paraff">{{event.desc}}</p>
+            </div>
+            <p>{{event.venue.name}}</p>
+    				<a class="btn btn-primary" href="#!/events/details/{{event._id}}">View event</a>
+    			</div>
+    			<div class="col-md-6">
+    				<img class="thumbnail" src="{{event.venue.icon}}" id="thumbnail">
+    			</div>
+          <div class="col-md-6">
+            <img class="thumbnail" src="{{event.icon.url}}" id="thumbnail">
+          </div>
+    		</div>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('thumbnail').on("error", function() {
+    $(this).remove();  // Execute with commenting this line and see the result
+    console.log(document.querySelector('img'));
+  });
+});
+</script>

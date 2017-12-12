@@ -1,0 +1,587 @@
+<option ng-repeat="item in getVenues()">{{venue.name}}</option>
+
+ ng-init="getVenues()"
+
+           <option>{{venue.name}}</option>
+
+                     <select ng.model="venue" ng-click="getVenues()" ng-options="venue.name for venue in venues 
+            class="form-control"> 
+          <option>{{venue.name}}</option> 
+          </select>
+
+  //venue = mongoose.model('Venue').schema;
+                    <select ng-model="event.venue" class="form-control">
+            <option value="Hello">Hello</option>
+          </select>
+
+
+           <select ng-model="event.venue" ng-init="getVenues()" ng-options="venue.name for venue in venues" 
+            class="form-control"> 
+           </select>
+
+
+           ng-controller="PersonListCtrl"
+  /*{ useMongoClient: true 
+});*/
+
+             <div ng-app="myApp" ng-controller="EventsController">
+    <div class="bar">
+      Search: <input ng-model="query">
+    </div>
+    <ul class="">
+    <li ng-repeat="event in events | filter:query">
+      {{events.name}}
+    </li>
+    </ul>
+    </div>
+  </div>
+
+      <ul>
+      <li ng-repeat="event in events | filter:curEvents">
+        <a> {{event.name}} </a>
+      </li>
+    </ul>
+
+
+    //app.use(expressJWT({ secret: secret }).unless({ path: ['/api/login', '/events/add']}))
+
+
+//var apiRoutes = require('./routers/api');
+
+        /*var myToken = jwt.sign({ username: req.body.username }, 'hello');
+        res.status(200).json(myToken);*/
+
+
+
+
+  //GET on pageload to get list of venues you can select. 
+
+//Get venue by name 
+
+/*app.get('/api/venues/:name', function(req, res){
+  Venue.getVenueByName(req.params.name, function(err, venue){
+    if(err){
+      throw err;
+    }
+    res.json(venue);
+  });
+});*/
+
+
+
+
+  //Legitimate Token DESTINATION B
+  //Home Route
+  // api.get('/', function(req, res) {
+  //   res.json("Home Route! Home fly!");
+  // });
+
+  //chaining method to perform multiple http methods on a single route
+  /*api.route('/')
+
+  .post(function(req, res) {
+
+    var story = new Story({
+      creator: req.decoded.id,
+      content: req.body.content
+
+    });
+
+    story.save(function(err) {
+      if (err) {
+        res.send(err);
+        return
+      }
+      res.json({
+        message: "Story has been created!"
+      })
+
+    })
+
+  })
+  //get user's stories
+  .get(function(req, res) {
+
+    Story.find({
+      creator: req.decoded.id
+    }, function(err, stories) {
+      if (err) {
+        res.send(err);
+        return;
+      }
+
+      res.json(stories);
+
+    });
+  });*/
+
+
+
+/*userSchema.pre('save', function(next) {
+    var user = this;
+
+    // only hash the password if it has been modified (or is new)
+    if (!user.isModified('password')) return next();
+
+    // generate a salt
+    bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+        if (err) return next(err);
+        
+        // hash the password using our new salt
+        bcrypt.hash(user.password, salt, function(err, hash) {
+            if (err) return next(err);
+
+            // override the cleartext password with the hashed one
+            user.password = hash;
+            next();
+        });
+    });
+});
+
+UserSchema.methods.comparePassword = function(candidatePassword, cb) {
+    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+        if (err) return cb(err);
+        cb(null, isMatch);
+    });
+};*/
+
+
+
+<div class="panel panel-default" ng-init="getEvents()">
+  <div class="panel-heading">
+    <h3 class="panel-title">Latest events</h3>
+  </div>
+  <div>
+  <input type="text" ng-model="search" placeholder="Search for events, venues, or dates" size="40">
+  <div class="panel-body">
+    <div class="row" ng-init="search()">
+      <div ng-repeat="event in events | filter:search">
+        <div class="col-md-3">
+          <div class="col-md-6">
+            <h4>{{event.name}}</h4>
+            <p>{{event.desc}}</p>
+            <p>{{event.venue.name}}</p>
+            <a class="btn btn-primary" href="#!/events/details/{{event._id}}">View event</a>
+          </div>
+          <div class="col-md-6">
+            <img class="thumbnail" src="{{event.venue.icon}}">
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+    Run Sample api searches <br><br>
+  <input type="button" onclick="show_alert()" value="Query #1 " /> <br>
+  <input type="button" onclick="show_alert2()" value="Query #2 " /> <br>
+
+
+/*var UserSchema = Schema({
+  username:{
+    type: String,
+    required: true,
+  },
+  password:{
+    type: String,
+    required: true
+  }
+});*/
+
+
+/*UserSchema.methods.comparePassword = function(candidatePassword, cb) {
+    var user = this;
+    bcrypt.compare(candidatePassword, user.password, function(err, isMatch) {
+        console.log(candidatePassword);
+        console.log(user.password);
+        if (err) return cb(err, null);
+            cb(null, isMatch);
+    });
+};*/
+
+
+
+
+
+/*module.exports.createUser = function (newUser, callback) {
+    User.create(newUser, callback);
+}*/
+
+
+//password hashing algorithm
+/*UserSchema.pre('save', function(next) {
+  var user = this;
+  if (!user.isModified('password')) return next();
+  bcrypt.hash(user.password, null, null,
+    function(err, hash) {
+      if(err) return next(err);
+      user.password = hash;
+      next();
+    });
+
+});
+
+*/
+
+
+/*// POST user 
+app.post('/api/register', function(req, res){
+  var user = req.body;
+  User.createUser(req.body, function(err, user){
+    if(err){
+      throw err;
+    }
+    res.json(user);
+  });
+});*/
+
+
+
+
+app.post('/api/login', function(req, res){
+  if(!req.body.username){
+    res.status(400).send('username required');
+    return;
+  }
+  if(!req.body.password){
+    res.status(400).send('password required');
+    return; 
+  } 
+
+  User.findOne({username: req.body.username}, function(err,user){
+    if (err) throw err;
+    if(!user){
+      res.status(401).send('No user');
+    } else {
+    user.comparePassword(req.body.password, function(err2, isMatch){
+      if (err2) throw err2;
+      if(!isMatch){
+        res.status(401).send('Invalid Password');
+      } else {
+        
+        //Generate Token
+        secret = fs.readFileSync('./secret.pem');
+        var opts = {};
+        opts.issuer = 'YourName';
+        jwt.sign({ username: req.body.username, password: req.body.password, ipadd: req.headers['x-forwarded-for'] }, secret, opts, function(token) {
+            return res.send({ 'status': 200, 'token': token });
+        });
+
+        //Verify Token
+        secret = fs.readFileSync('./secret.pem'); 
+        app.use(jwt({ secret: secret, issuer: 'YourName' }).unless({ path: ['/api/login', '/events/add']}));
+            //Successful Authentication
+            console.log(user);
+      }
+      })
+    };
+  });
+
+});
+
+
+        /*var validPassword = user.comparePassword(req.body.password);
+        if (!validPassword) {
+          res.send({
+              message: "Invalid Password!"
+            })
+        } 
+        else {    
+          //4* - pass created token to the user that logs in
+          var token = createToken(user);
+            res.json({
+              success: true,
+              message: "Successful Login!",
+              token: token
+            });
+          }
+        }*/
+
+
+         function show_alert()
+  {
+    var oArgs = {
+              app_key:"GwxNCNsWfn4HxvFT",
+              id: "20218701",
+              page_size: 25 ,
+    };
+    EVDB.API.call("/events/get", oArgs, function(oData) {
+        // Note: this relies on the custom toString() methods below    });
+        alert("your myObject is " + JSON.stringify(oData) );
+    });
+
+  }
+
+
+  
+<script type="text/javascript">
+
+  function show_alert2()
+  {
+     var oArgs = {
+        app_key: "GwxNCNsWfn4HxvFT",
+        q: "music",
+        where: "United Kingdom", 
+        "date": "2013061000-2015062000",
+        page_size: 5,
+        sort_order: "popularity",
+     };
+     EVDB.API.call("/events/search", oArgs, function(oData) {
+        // Note: this relies on the custom toString() methods below
+        //alert("your myObject is " + JSON.stringify(oData));
+        var obj = oData;
+        function simplifyObject(obj){
+        return obj.events.event.map((x) => { return { title: x.title, description: x.description, date: x.start_time, venue_name: x.venue_name, venue_address: x.venue_address, postal_code: x.postal_code } });
+      }
+      var result = simplifyObject(obj);//result is an array of objects
+       console.log(result)
+       console.log(result[0].title);//for 1st object's title
+      /*function(response){
+        events = response.data;
+      }*/
+      //var events = result;
+      //return events;
+      });
+  } 
+</script>
+
+/*  function getRemoteEvents()
+  { 
+     var oArgs = {
+        app_key: "GwxNCNsWfn4HxvFT",
+        q: "music",
+        where: "United Kingdom", 
+        "date": "2013061000-2015062000",
+        page_size: 5,
+        sort_order: "popularity",
+     };
+     EVDB.API.call("/events/search", oArgs, function(oData) {
+        // Note: this relies on the custom toString() methods below
+        //alert("your myObject is " + JSON.stringify(oData));
+        var obj = oData;
+        function simplifyObject(obj){
+        return obj.events.event.map((x) => { return { title: x.title, description: x.description, date: x.start_time, venue_name: x.venue_name, venue_address: x.venue_address, postal_code: x.postal_code } });
+      }
+      var result = simplifyObject(obj);//result is an array of objects
+       console.log(result)
+       //console.log(result[0].title);//for 1st object's title
+      /*function(response){
+        events = response.data;
+      }
+      return result;
+      });
+  } 
+
+  $scope.getEvents = function(){
+    $http.get('/api/events').then(function(response){
+      $scope.events = response.data;
+      $scope.events = $scope.events.concat(result.data);
+    });
+  }
+  $
+*/
+
+//method password compared to DB
+/*UserSchema.methods.comparePassword = function(password) {
+  var user = this;
+//bcrypt uses compareSync method to match password user JUST ented and 'user.password' which is in our BD
+  if (err) return err; 
+  return bcrypt.compareSync(password, user.password);
+}*/
+
+/*UserSchema.methods.comparePassword = function(candidatePassword, password2, cb) {
+    bcrypt.compare(candidatePassword, password2, function(err, isMatch) {
+        if (err) { return cb(err); }
+        cb(null, isMatch);
+    });
+};*/
+
+
+
+
+UserSchema.pre('save', function(next) { 
+    var user = this;
+    // only hash the password if it has been modified (or is new)
+    if (!user.isModified('password')) return next();
+    // generate a salt
+    bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+        if (err) return next(err);
+        // hash the password using our new salt
+        bcrypt.hash(user.password, salt, function(err, hash) {
+            if (err) return next(err);
+            // override the cleartext password with the hashed one
+            user.password = hash;
+            next();
+        });
+    });
+});
+
+<li><a href="#!/events/add">Admin Panel</a></li>
+
+
+
+            <span class="group-btn">     
+                <a href="#!/events/add" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+            </span>
+
+                        <span class="group-btn">     
+                <button type="submit" ng-submit="login()" class="btn btn-primary btn-md">
+                    login <i class="fa fa-sign-in"></i>
+                </button>
+                
+            </span>  
+
+                        <span class="group-btn">     
+                <a ng-click="login()" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+            </span>  
+
+                        <span class="group-btn">     
+                <button type="submit" class="btn btn-primary btn-md">
+                    login <i class="fa fa-sign-in"></i>
+                </button>
+            </span>
+
+                        <span class="group-btn">     
+                <a ng-click="login()" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+            </span>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <div class="form-login">
+            <h4>Welcome back.</h4>
+            <input type="text" id="userName" ng-model="user.username" class="form-control input-sm chat-input" placeholder="username" />
+            </br>
+            <input type="text" id="userPassword" ng-model="user.password" class="form-control input-sm chat-input" placeholder="password" />
+            </br>
+            <div class="wrapper">
+
+            <span class="group-btn">     
+                <a ng-click="login()" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+            </span>
+
+            </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<a href="#!/venues/edit/{{venue._id}}">Edit</a> | 
+
+</textarea>
+
+    <textarea maxlength="100" rows="15">
+
+
+      <p>{{event.desc}}</p>    
+
+
+
+
+.p {
+     width: 5px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+}
+
+.div {
+    width: 200px; 
+    overflow: hidden; 
+    border: 1px solid #f00;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+
+
+.text {
+  position: relative;
+  font-size: 14px;
+  color: black;
+  width: px; /* Could be anything you like. */
+}
+
+.text-concat {
+  position: relative;
+  display: inline-block;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 2.6em; /* (Number of lines you want visible) * (line-height) */
+  line-height: 1.4em;
+  text-align:justify;
+}
+
+.text.ellipsis::after {
+  content: "...";
+  position: absolute;
+  right: -12px; 
+  bottom: 4px;
+}
+
+
+            <div class="text ellipsis" maxlength="10">
+            <span class="text-concat">
+            {{event.desc}}
+            </span>
+            </div>
+
+            <p style="width: 15ch;">{{event.desc}}</p>
+
+
+
+/*var mongoose = require('mongoose'),
+  Schema = mongoose.Schema,
+    bcrypt = require('bcrypt');
+    SALT_WORK_FACTOR = 10;
+
+var UserSchema = new Schema({
+  name: String,
+  username: {
+    type: String,
+    required: true,
+    index: {
+      unique: true
+    }
+  },
+  password: {
+    type: String,
+    required: true, 
+    select: false
+  }
+});
+
+UserSchema.pre('save', function(next) { 
+    var user = this;
+    // only hash the password if it has been modified (or is new)
+    if (!user.isModified('password')) return next();
+    // generate a salt
+    bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+        if (err) return next(err);
+        // hash the password using our new salt
+        bcrypt.hash(this.password, salt, function(err, hash) {
+            if (err) return next(err);
+            // override the cleartext password with the hashed one
+            this.password = hash;
+            next();
+        });
+    });
+});
+
+UserSchema.methods.comparePassword = function(password, cb) {
+    bcrypt.compare(this.password, password, function(err, isMatch) {
+      console.log("this.password"+this.password);
+      console.log(password);
+       if (err) { return cb(err); }
+       cb(null,isMatch);
+    });
+};
+
+var User = module.exports = mongoose.model('User', UserSchema);*/

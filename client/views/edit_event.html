@@ -1,0 +1,38 @@
+<a href="#/events">Go Back</a>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Edit Event</h3> 
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12"> 
+      <form ng-submit="updateEvent()" ng-init="getEvent()">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" ng-model="event.name" placeholder="title">
+        </div>
+        <div class="form-group">
+          <label>Venue</label>
+          <select ng.model="event.venue" class="form-control">
+            <option value="hello">Enter venue</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <input type="Date" class="form-control" ng-model="event.date" placeholder="title">
+        </div>
+        <div class="form-group">
+          <label>Url</label>
+          <input type="url" class="form-control" ng-model="event.url" placeholder="title">
+        </div>
+        <div class="form-group">
+          <label>Desc</label>
+          <textarea class="form-control"  ng-model="event.desc" placeholder="desc"></textarea>  
+        </div>
+
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>

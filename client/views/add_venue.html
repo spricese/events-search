@@ -1,0 +1,36 @@
+<a href="#/events">Go Back</a>
+<div class="panel panel-default">
+  <div class="panel-heading"> 
+    <h3 class="panel-title">Add Venue</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12"> 
+      <form ng-submit="addVenue()">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" ng-model="venue.name" placeholder="title">
+        </div>
+        <div class="form-group">
+          <label>Postcode</label>
+          <input type="test" class="form-control" ng-model="venue.postcode" placeholder="title">
+        </div>
+        <div class="form-group">
+          <label>Town</label>
+          <input type="text" class="form-control" ng-model="venue.town" placeholder="title">
+        </div>
+        <div class="form-group">
+          <label>Url</label>
+          <input type="url" class="form-control" ng-model="venue.url" placeholder="title">
+        </div>
+        <div class="form-group">
+          <label>Icon</label>
+          <input type="url" class="form-control" ng-model="venue.icon" placeholder="title">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
+
