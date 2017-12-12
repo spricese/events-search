@@ -7,7 +7,7 @@ var fs = require('fs');
 var expressJWT = require('express-jwt');
 var jwt = require('jsonwebtoken');
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname+'/client'));
 app.use(bodyParser.json());
@@ -16,7 +16,7 @@ Venue = require('./models/venues');
 Event = require('./models/events');
 
 // Connect to Mongoose
-mongoose.connect('mongodb://localhost/events');  
+mongoose.connect('mongodb://localhost/events', { useMongoClient: true });  
 
 var db = mongoose.connection;
 
