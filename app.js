@@ -2,9 +2,6 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var fs = require('fs');
-
-var expressJWT = require('express-jwt');
 var jwt = require('jsonwebtoken');
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -147,8 +144,7 @@ app.delete('/events2017/venues/:_id', function(req, res){
 });
 
 var User = require('./models/users');
-var secretKey = 'Concertina';
-var jwt = require('jsonwebtoken');    
+var secretKey = 'Concertina'; 
 
 function createToken(user, req) {
   var token = jwt.sign({
