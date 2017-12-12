@@ -23,8 +23,6 @@ var eventSchema = mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'Venue'
 	}
-	
-	//venue: VenueSchema
 });
 
 var Event = module.exports = mongoose.model('Event', eventSchema);
