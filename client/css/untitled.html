@@ -425,6 +425,18 @@ UserSchema.pre('save', function(next) {
                 <a href="#!/events/add" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
             </span>
 
+
+              //Event.findOne().populate('venue_id').exec().then(callback);
+  //Venue.findOne({ id: req.params.id }).populate('venues').exec().then(callback);
+  //Event.find({ venue: venue._id }).exec();
+  //Event.Venue.getVenueById().populate('venues').exec();
+  //Event.find(callback).limit(limit);
+
+
+
+    //Event.findById(id).populate('venue').exec().then(callback);
+  //Event.findOne().populate('venues').exec().then(callback);
+
                         <span class="group-btn">     
                 <button type="submit" ng-submit="login()" class="btn btn-primary btn-md">
                     login <i class="fa fa-sign-in"></i>
@@ -585,3 +597,20 @@ UserSchema.methods.comparePassword = function(password, cb) {
 };
 
 var User = module.exports = mongoose.model('User', UserSchema);*/
+
+
+
+/*Event.findOne({
+  venue: id,
+})
+   .populate('venue')
+   .exec()
+   .then((ret) => {
+     // ...
+   })
+   .catch((err) => {
+     // ...
+   });*/
+
+    
+  //venue: VenueSchema

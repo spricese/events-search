@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var jwt = require('jsonwebtoken');
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname+'/client'));
 app.use(bodyParser.json());
